@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" type="text/css" href="styles.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="icon" type="image/x-icon" href="./assets/favico/default.ico">
+</head>
+<body class="custom-cursor">
+
+  <div id="terminal" class="custom-cursor">
+    <div id="terminal-header">
+      <div id="terminal-buttons">
+
+        <div class="terminal-button" id="close-button"></div>
+        <div class="terminal-button" id="minimize-button"></div>
+        <div class="terminal-button" id="maximize-button"></div>
+      </div>
+    </div>
+    <div id="terminal-content">
+      <p id="terminal-text"></p>
+    </div>
+  </div>
+
+  <div id="video-background">
+    <video autoplay muted loop id="myVideo">
+      <source src="./assets/back/default.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div id="audio-background">
+      <audio autoplay loop id="myAudio">
+        <source src="./assets/music/default.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div id="blurred-box">
+      <img id="profile-picture" src="./assets/pfp/default.jpg" alt="Profile Picture">
+      <img id="avatar-frame" src="" alt="Avatar Frame">
+      <p id="username-container" style="color: white; font-weight: bold; font-size: 28px;">
+        <span id="username">c0mplex</span>
+        <span id="typing-cursor">|</span>
+      </p>
+      
+      <div class="user-description">
+        <p id="user-description" style="color: white;">
+          I'm c0mplex, and I'm a technical consultant at CodeMỏ.<br>3 years python experience<br>1 years java experience
+        </p>
+      </div>
+
+      <div class="links">
+        <a href="https://discord.com/users/880694639227699290" target="_blank">
+          <i class="fab fa-discord"></i>
+        </a> 
+        <a href="https://www.facebook.com/enou456" target="_blank">
+          <i class="fab fa-facebook"></i> 
+        </a> 
+        <a href="https://gitlab.com/edev-xquang" target="_blank">
+          <i class="fa-brands fa-gitlab"></i>
+        </a> 
+      </div>
+    </div>
+  </div>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/title.js"></script>
+  <script src="./assets/js/discord.js"></script>
+  <script src="./assets/js/username-animation.js"></script>
+</body>
+</html>
