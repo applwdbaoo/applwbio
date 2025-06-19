@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const videoOverlay = document.createElement('div');
+  videoOverlay.id = 'video-overlay';
+  document.getElementById('video-background').appendChild(videoOverlay);
   var terminalContainer = document.getElementById('terminal');
   var terminalText = document.getElementById('terminal-text');
   var videoBackground = document.getElementById('myVideo');
@@ -7,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var closeButton = document.getElementById('close-button');
 
   var terminalTextContent = [
-      "User: Unknown",
+      "User: My Love",
       "IP: Loading...",
       "System: Loading...",
       "Bio Loaded",
@@ -47,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
       audioBackground.play();
       blurredBox.style.display = 'block';
       removeEventListeners();
+      document.body.classList.add('video-normal');
   }
 
   function addEventListeners() {
@@ -178,13 +182,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function getAsciiArt() {
       return `
-    ██████╗  █████╗  ██╗ ██████╗ 
-    ╚════██╗██╔══██╗███║██╔═████╗
-     █████╔╝╚██████║╚██║██║██╔██║
-    ██╔═══╝  ╚═══██║ ██║████╔╝██║
-    ███████╗ █████╔╝ ██║╚██████╔╝
-    ╚══════╝ ╚════╝  ╚═╝ ╚═════╝  
-                    
+    ⡟⠛⠻⠛⠻⣿⣿⡿⠛⠉⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+    ⡇⠐⡀⠂⢁⠟⢁⣠⣶⣿⡄⢹⣿⣿⣿⣿⣿⠿⠿⠛⣉⣉⡄⢹
+    ⣿⣦⣄⡕⠁⣴⣿⣿⣿⡿⢋⣀⣤⡤⢀⠄⣤⣶⣾⣿⣿⣿⡇⠀
+    ⣿⣿⡟⢠⣾⣿⣿⣿⣿⠁⢆⣾⣿⡁⢎⣾⣿⣿⣿⣿⣿⣿⡇⢠
+    ⡿⠟⢠⣿⠟⠻⣿⣿⣿⣿⣾⣿⣿⣶⣾⣿⣿⣿⣿⣿⣿⣿⠃⣸
+    ⡆⢻⣿⡿⠖⠀⠈⢻⣿⢻⣿⣿⣿⣷⣟⠿⠟⠛⠙⢿⣿⣿⠀⣿
+    ⢁⣾⣿⣇⣤⣴⣾⣿⣿⣮⣭⣬⣭⣾⣧⢄⠀⠒⢶⣿⣿⣿⠧⠘
+    ⠀⣿⠛⠡⠂⠀⡀⠈⠙⠟⠉⠉⠀⠀⢍⠺⣷⣦⣾⣿⣿⣿⣦⡉
+    ⣧⠘⣈⣤⡀⠁⠄⡈⠄⡀⠂⠌⢐⣀⣀⠱⠘⣟⡿⣿⣿⣶⠉⣴
+    ⡟⢰⣿⣿⣿⠀⠚⠄⠠⠐⢀⠂⣿⣿⣿⣿⣶⣬⡺⣹⢲⡞⠆⢹
+    ⡇⢸⣿⣿⣟⠀⠀⠂⠁⠀⣂⠀⠹⣿⢿⣿⣿⣿⣿⣷⣭⡀⢴⣿
+    ⣷⡌⠻⡿⠋⠄⠀⠀⠀⠐⠀⠃⠀⠙⢷⣿⣿⣿⣿⣾⣿⣿⣦⡙ 
   `;
   }
 
@@ -199,5 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 
+  document.body.classList.remove('video-normal');
+  videoOverlay.style.display = 'block';
   limitVolume(1);
 });
