@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    const rotateY = (x - centerX) / 30;
-    const rotateX = (centerY - y) / 30;
+    const rotateY = -(x - centerX) / 30;
+    const rotateX = -(centerY - y) / 30;
     
     blurredBox.style.setProperty('--rotate-x', `${rotateX}deg`);
     blurredBox.style.setProperty('--rotate-y', `${rotateY}deg`);
