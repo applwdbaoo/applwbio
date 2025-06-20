@@ -459,4 +459,8 @@ body.video-normal #video-overlay {
   opacity: 0;
   backdrop-filter: blur(0);
   pointer-events: none;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1ccfb489f7fe6ec2cd3b099527332b40a2b26877
