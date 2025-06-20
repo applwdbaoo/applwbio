@@ -326,9 +326,9 @@ body {
   border-radius: 50%;
   display: inline-block;
   margin-right: 6px;
-  margin-left: -150px;
+  margin-left: -138px;
   margin-bottom: 3px;
-  margin-top: 10px;  
+  margin-top: 5px;  
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
@@ -619,6 +619,10 @@ body.video-normal #video-overlay {
     min-height: 60px !important;
     padding: 8px !important;
     font-size: 12px !important;
+  }
+  
+  #discord-status-dot {
+  margin-left: -120px !important;
   }
 
   #discord-album-art {
