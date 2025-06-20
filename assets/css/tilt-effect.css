@@ -7,7 +7,6 @@
 
 #blurred-box:hover {
   transform: translate(-50%, -50%) perspective(1000px) rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateZ(20px);
-  box-shadow: 0 0 10px rgba(65, 185, 255, 0.712);
 }
 
 #blurred-box::after {

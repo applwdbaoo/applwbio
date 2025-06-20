@@ -19,29 +19,51 @@ document.addEventListener('DOMContentLoaded', function() {
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
-  function updateBoxShadow() {
-    requestAnimationFrame(updateBoxShadow);
+  // Biến điều khiển
+  let smoothIntensity = 0;
+  let prevIntensity = 0;
+
+  function updateVisuals() {
+    requestAnimationFrame(updateVisuals);
     
     analyser.getByteFrequencyData(dataArray);
-
+    
+    // Tính toán cường độ âm thanh
     let sum = 0;
     for (let i = 0; i < bufferLength; i++) {
       sum += dataArray[i];
     }
-    const average = sum / bufferLength;
+    const rawIntensity = sum / bufferLength / 30;
     
-    const intensity = average / 35;
-    const shadowBlur = 10 + intensity * 15;
-    const shadowSpread = intensity * 5;
-    const shadowColor = `rgba(65, 185, 255, ${0.7 + intensity * 0.5})`;
+    // Làm mượt cường độ
+    smoothIntensity = Math.max(rawIntensity, prevIntensity * 0.9);
+    prevIntensity = smoothIntensity;
     
+    // Hiệu ứng box-shadow
+    const shadowBlur = 10 + smoothIntensity * 15;
+    const shadowSpread = smoothIntensity * 5;
+    const shadowColor = `rgba(255, 255, 255, ${0.7 + smoothIntensity * 0.5})`;
+    
+    // Áp dụng hiệu ứng
     blurredBox.style.boxShadow = `0 0 ${shadowBlur}px ${shadowSpread}px ${shadowColor}`;
-    blurredBox.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${rotate}deg) rotateY(${rotate}deg) translateX(${translateX}px) translateY(${translateY}px)`;
+    
+    // Điều khiển hiệu ứng border
+    if (smoothIntensity > 0.1) {
+      blurredBox.classList.add('active-border');
+      const borderElement = blurredBox.querySelector('.animated-border') || document.createElement('div');
+      borderElement.className = 'animated-border';
+      borderElement.style.opacity = smoothIntensity;
+      if (!blurredBox.contains(borderElement)) {
+        blurredBox.appendChild(borderElement);
+      }
+    } else {
+      blurredBox.classList.remove('active-border');
+    }
   }
 
   audioElement.addEventListener('play', function() {
     audioContext.resume().then(() => {
-      updateBoxShadow();
+      updateVisuals();
     });
   });
 
