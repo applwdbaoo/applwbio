@@ -156,10 +156,6 @@ body {
   transform-style: preserve-3d;
 }
 
-#blurred-box:hover {
-  background-color: rgba(0, 0, 0, 0.377);
-}
-
 #blurred-box img {
   width: 120px;
   height: 120px;
