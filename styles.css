@@ -437,7 +437,7 @@ body {
 
 .lang-container {
   position: absolute;
-  bottom: 63px;
+  bottom: 68px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -631,7 +631,7 @@ body.video-normal #video-overlay {
   }
 
   .lang-container {
-    bottom: 40px !important;
+    bottom: 43px !important;
   }
 
   .lang-container img {
@@ -650,10 +650,6 @@ body.video-normal #video-overlay {
 
   .user-description p {
     font-size: 14px !important;
-  }
-
-  .lang-container {
-    bottom: 10%;
   }
 
   .badges-container {
