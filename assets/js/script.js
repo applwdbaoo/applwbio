@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (i < line.length) {
               terminalText.textContent += line.charAt(i);
               i++;
-              setTimeout(typeChar, 50);
+              setTimeout(typeChar, currentIndex === 0 ? 10 : 50);
           } else {
               terminalText.textContent += "\n";
               currentIndex++;
@@ -38,18 +38,28 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       }
 
+      if (currentIndex === 0) {
+          terminalText.style.transform = 'scale(5)';
+          terminalText.style.opacity = '0';
+          terminalText.style.transition = 'transform 1.5s ease-out, opacity 1.5s ease-out';
+          void terminalText.offsetWidth;
+          
+          terminalText.style.transform = 'scale(1)';
+          terminalText.style.opacity = '1';
+      }
+
       typeChar();
   }
 
-    function handleInput() {
-        terminalContainer.style.display = 'none';
-        document.getElementById('myVideo').play();
-        document.getElementById('blurred-box').style.display = 'block';
-        document.getElementById('music-controls').style.display = 'flex';
-        removeEventListeners();
-        document.body.classList.add('video-normal');
-        window.MusicPlayer.start()
-    }
+  function handleInput() {
+      terminalContainer.style.display = 'none';
+      document.getElementById('myVideo').play();
+      document.getElementById('blurred-box').style.display = 'block';
+      document.getElementById('music-controls').style.display = 'flex';
+      removeEventListeners();
+      document.body.classList.add('video-normal');
+      window.MusicPlayer.start()
+  }
 
   function addEventListeners() {
       document.addEventListener('keydown', handleKeyPress);
@@ -196,4 +206,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.body.classList.remove('video-normal');
   videoOverlay.style.display = 'block'; 
-});
+}); 
