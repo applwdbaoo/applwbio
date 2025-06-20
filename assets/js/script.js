@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var terminalContainer = document.getElementById('terminal');
   var terminalText = document.getElementById('terminal-text');
   var videoBackground = document.getElementById('myVideo');
-  var audioBackground = document.getElementById('myAudio');
-  var blurredBox = document.getElementById('blurred-box');
   var closeButton = document.getElementById('close-button');
 
   var terminalTextContent = [
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var currentIndex = 0;
 
   videoBackground.pause();
-  audioBackground.pause();
 
   function typeWriter() {
       var line = currentIndex === 0 ? getAsciiArt() : terminalTextContent[currentIndex - 1];
@@ -44,14 +41,15 @@ document.addEventListener('DOMContentLoaded', function() {
       typeChar();
   }
 
-  function handleInput() {
-      terminalContainer.style.display = 'none';
-      videoBackground.play();
-      audioBackground.play();
-      blurredBox.style.display = 'block';
-      removeEventListeners();
-      document.body.classList.add('video-normal');
-  }
+    function handleInput() {
+        terminalContainer.style.display = 'none';
+        document.getElementById('myVideo').play();
+        document.getElementById('blurred-box').style.display = 'block';
+        document.getElementById('music-controls').style.display = 'flex';
+        removeEventListeners();
+        document.body.classList.add('video-normal');
+        window.MusicPlayer.start()
+    }
 
   function addEventListeners() {
       document.addEventListener('keydown', handleKeyPress);
@@ -87,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
   var userAgent = navigator.userAgent;
-  var systemInfo;
   
   function getOperatingSystem() {
       if (userAgent.match(/Windows/)) {
@@ -197,18 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
   }
 
-  var audio = document.getElementById("myAudio");
-
-  var maxVolume = 1;
-  function limitVolume(volume) {
-      if (volume > maxVolume) {
-          audio.volume = maxVolume;
-      } else {
-          audio.volume = volume;
-      }
-  }
-
   document.body.classList.remove('video-normal');
-  videoOverlay.style.display = 'block';
-  limitVolume(1);
+  videoOverlay.style.display = 'block'; 
 });

@@ -34,15 +34,20 @@
       <source src="./assets/back/default.mp4" type="video/mp4">
       Your browser does not support HTML5 video.
     </video>
+
     <div id="audio-background">
-      <audio autoplay loop id="myAudio">
-        <source src="./assets/music/default.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+      <div id="music-controls">
+        <input type="range" id="volume-slider" min="0" max="100" value="50">
+        <div id="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
     </div>
     <div id="video-overlay"></div>
     <div id="blurred-box" class="tilt-element">
-      <img id="profile-picture" src="./assets/pfp/default.jpg" alt="Profile Picture">
+      <img id="profile-picture" src="./assets/pfp/default.gif" alt="Profile Picture">
       <img id="avatar-frame" src="" alt="Avatar Frame">
       <p id="username-container" style="color: white; font-weight: bold; font-size: 32px;">
         <span id="username">c0mplex</span>
@@ -122,5 +127,6 @@
   <script src="./assets/js/audio-visualizer.js"></script>
   <script src="./assets/js/neko.js"></script>
   <script src="./assets/js/neko-init.js"></script>
+  <script src="./assets/js/music.js"></script>
 </body>
 </html>
