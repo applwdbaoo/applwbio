@@ -6,7 +6,14 @@ var titles = [
   "@c0mp",
   "@c0mpl",
   "@c0mple",
-  "@c0mplex"
+  "@c0mplex",
+  "@c0mple",
+  "@c0mpl",
+  "@c0mp",
+  "@c0m",
+  "@c0",
+  "@c",
+  "@",
 ];
 
 function changeTitle() {
