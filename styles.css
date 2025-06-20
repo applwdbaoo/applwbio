@@ -135,12 +135,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) perspective(1000px);
-  width: 500px; 
-  height: 670px;
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  min-height: 670px;
   background-color: rgba(0, 0, 0, 0.377);
   border-radius: 20px;
   border: 2px solid rgba(150, 150, 150, 0.137);
   box-shadow: 0 0 10px rgba(65, 185, 255, 0.712);
+  display: block;
+  transition: 
+    box-shadow 0.1s linear,
+    transform 0.1s ease-out;
+  will-change: box-shadow, transform;
   backdrop-filter: blur(5px);
   z-index: 999;
   display: none;
@@ -182,7 +189,7 @@ body {
 }
 
 .links a:hover {
-  color: rgb(65, 185, 255);
+  color: rgba(65, 185, 255, 0.712);
   text-decoration: underline;
   transform: translateY(-5px) scale(1.1);
 }
@@ -459,4 +466,109 @@ body.video-normal #video-overlay {
   opacity: 0;
   backdrop-filter: blur(0);
   pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  #blurred-box {
+    width: 90%;
+    min-height: 600px;
+  }
+
+  #profile-picture {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  #username-container {
+    font-size: 24px !important;
+    top: 90px !important;
+  }
+
+  .user-description {
+    bottom: 120px !important;
+    width: 90% !important;
+  }
+
+  .lang-container {
+    bottom: 50px !important;
+  }
+
+  .lang-container img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .links {
+    bottom: 15px !important;
+  }
+
+  .discord-widget {
+    margin-top: 60px !important;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #blurred-box {
+    min-height: 500px;
+    padding: 10px;
+  }
+
+  #profile-picture {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  #username-container {
+    font-size: 20px !important;
+    top: 70px !important;
+  }
+
+  .badges-container {
+    top: 150px !important;
+  }
+
+  .user-description p {
+    font-size: 14px !important;
+  }
+
+  .lang-container {
+    bottom: 40px !important;
+  }
+
+  .lang-container img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .links a i {
+    font-size: 20px !important;
+  }
+  #profile-picture {
+    width: 25vmin;
+    height: 25vmin;
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  #username-container {
+    top: 20%;
+  }
+
+  .user-description {
+    bottom: 22%;
+    width: 80%;
+  }
+
+  .lang-container {
+    bottom: 10%;
+  }
+
+  .badges-container {
+    top: 30%;
+  }
+
+  .discord-widget {
+    margin-top: 15% !important;
+  }
 }
