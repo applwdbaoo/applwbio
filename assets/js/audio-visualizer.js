@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
 
-  // Biến điều khiển
   let smoothIntensity = 0;
   let prevIntensity = 0;
 
@@ -28,26 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     analyser.getByteFrequencyData(dataArray);
     
-    // Tính toán cường độ âm thanh
+
     let sum = 0;
     for (let i = 0; i < bufferLength; i++) {
       sum += dataArray[i];
     }
     const rawIntensity = sum / bufferLength / 30;
     
-    // Làm mượt cường độ
     smoothIntensity = Math.max(rawIntensity, prevIntensity * 0.9);
     prevIntensity = smoothIntensity;
     
-    // Hiệu ứng box-shadow
     const shadowBlur = 10 + smoothIntensity * 15;
     const shadowSpread = smoothIntensity * 5;
     const shadowColor = `rgba(255, 255, 255, ${0.7 + smoothIntensity * 0.5})`;
     
-    // Áp dụng hiệu ứng
     blurredBox.style.boxShadow = `0 0 ${shadowBlur}px ${shadowSpread}px ${shadowColor}`;
     
-    // Điều khiển hiệu ứng border
     if (smoothIntensity > 0.1) {
       blurredBox.classList.add('active-border');
       const borderElement = blurredBox.querySelector('.animated-border') || document.createElement('div');
@@ -66,13 +61,4 @@ document.addEventListener('DOMContentLoaded', function() {
       updateVisuals();
     });
   });
-
-  document.body.addEventListener('click', function() {
-    if (audioContext.state === 'suspended') {
-      audioContext.resume();
-    }
-    if (audioElement.paused) {
-      audioElement.play();
-    }
-  }, { once: true });
 });
