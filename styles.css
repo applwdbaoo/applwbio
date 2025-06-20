@@ -201,12 +201,14 @@ body {
 
 .user-description {
   position: absolute;
-  bottom: 150px; 
+  bottom: 22%;
   left: 50%;
   transform: translateX(-50%);
+  width: 85%;
+  max-width: 450px;
   z-index: 1001;
   text-align: center;
-  width: 450px; 
+  transition: all 0.3s ease;
 }
 
 .user-description p {
@@ -214,22 +216,26 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 8px 15px;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 1.1em;
   margin: 0;
   transition: transform 0.3s;
+  word-break: break-word;
 }
 
 #avatar-frame {
   position: absolute;
-  top: 80px;
+  top: 11%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1.2);
-  width: 160px;
-  height: 160px;
-  z-index: 1000;
+  width: 25vmin;
+  height: 25vmin;
+  max-width: 160px;
+  max-height: 160px;
+  z-index: 1001;
   pointer-events: none;
   display: none;
   border-radius: 0 !important;
+  transition: all 0.3s ease;
 }
 
 #typing-cursor {
@@ -266,19 +272,22 @@ body {
 }
 
 .discord-widget {
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
-  border: 1px;
   border-radius: 12px;
   padding: 12px;
-  margin: 15px auto;
-  margin-top: 85px !important;
+  margin: 2% auto 0;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 90%;
   max-width: 360px;
   backdrop-filter: blur(10px);
   color: #fff;
   font-family: 'Inter', sans-serif;
-  display: block;
-  box-sizing: border-box;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  margin: 0 !important;
 }
 
 .discord-content {
@@ -288,12 +297,13 @@ body {
 }
 
 .discord-icon img {
-  width: 72px;
-  height: 72px;
+  width: 15vmin;
+  height: 15vmin;
+  max-width: 72px;
+  max-height: 72px;
   border-radius: 50%;
   margin-right: 16px;
   background-color: #222;
-  border: 0px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -405,25 +415,24 @@ body {
 
 .badges-container {
   position: absolute;
-  top: 185px;
+  top: 28%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   width: 90%;
   z-index: 1001;
-  margin-top: 20px;
   flex-wrap: wrap;
 }
 
 .badges-container img {
-  width: 20px !important;
-  height: 20px !important;
+  width: 24px !important;
+  height: 24px !important;
   border-radius: 0 !important;
   object-fit: contain;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 .lang-container {
@@ -481,11 +490,28 @@ body.video-normal #video-overlay {
 
   #username-container {
     font-size: 24px !important;
-    top: 90px !important;
+    top: 92px !important;
+  }
+
+  #typing-cursor {
+    font-size: 24px !important;
+  }
+
+  #avatar-frame {
+    top: 11%;
+    width: 22vmin;
+    height: 22vmin;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .discord-widget {
+    top: 39%;
+    width: 50%;
   }
 
   .user-description {
-    bottom: 120px !important;
+    bottom: 18.5% !important;
     width: 90% !important;
   }
 
@@ -506,6 +532,15 @@ body.video-normal #video-overlay {
     margin-top: 60px !important;
     width: 95%;
   }
+
+  .badges-container {
+    top: 27% !important;
+  }
+  
+  .badges-container img {
+    width: 21px !important;
+    height: 21px !important;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -520,15 +555,78 @@ body.video-normal #video-overlay {
   }
 
   #username-container {
-    font-size: 20px !important;
-    top: 70px !important;
+    top: 12.5% !important;
   }
 
-  .badges-container {
-    top: 150px !important;
+  #typing-cursor {
+    font-size: 24px !important;
   }
 
-  .user-description p {
+  #avatar-frame {
+    top: 10.1%;
+    width: 25vmin;
+    height: 25vmin;
+    max-width: 100px;
+    max-height: 100px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .discord-widget {
+    width: 90%;
+    max-width: 300px;
+    top: 47% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.9) !important;
+    padding: 8px;
+    margin: 0 !important;
+  }
+
+  .widget-mobile-top {
+    --widget-top: 30%;
+    --widget-translate-y: -50%;
+  }
+  .widget-mobile-bottom {
+    --widget-top: unset;
+    bottom: 15%;
+    --widget-translate-y: 0;
+  }
+  .widget-mobile-left {
+    --widget-left: 20%;
+  }
+  .widget-mobile-right {
+    --widget-left: 80%;
+  }
+  .widget-mobile-center {
+    --widget-left: 50%;
+  }
+
+  .discord-icon img {
+    width: 12vmin !important;
+    height: 12vmin !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+  }
+
+  .discord-meta b {
+    font-size: 16px !important;
+  }
+
+  .discord-meta span, .discord-meta div {
+    font-size: 12px !important;
+  }
+
+  .discord-activity {
+    min-height: 60px !important;
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+
+  #discord-album-art {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  #discord-activity-name {
     font-size: 14px !important;
   }
 
@@ -544,20 +642,14 @@ body.video-normal #video-overlay {
   .links a i {
     font-size: 20px !important;
   }
-  #profile-picture {
-    width: 25vmin;
-    height: 25vmin;
-    max-width: 120px;
-    max-height: 120px;
-  }
-
-  #username-container {
-    top: 20%;
-  }
 
   .user-description {
-    bottom: 22%;
-    width: 80%;
+    top: 65% !important;
+    width: 80% !important;
+  }
+
+  .user-description p {
+    font-size: 14px !important;
   }
 
   .lang-container {
@@ -565,10 +657,12 @@ body.video-normal #video-overlay {
   }
 
   .badges-container {
-    top: 30%;
+    top: 27% !important;
+  }
+  
+  .badges-container img {
+    width: 18px !important;
+    height: 18px !important;
   }
 
-  .discord-widget {
-    margin-top: 15% !important;
-  }
 }
