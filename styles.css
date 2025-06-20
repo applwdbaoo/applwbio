@@ -201,7 +201,7 @@ body {
 
 .user-description {
   position: absolute;
-  bottom: 22%;
+  bottom: 21%;
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
