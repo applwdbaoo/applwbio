@@ -1,4 +1,4 @@
-# Self-Hosted Bio Webpage
+# Self-Hosted Bio Website
 
 This project is a customizable self-hosted bio webpage template where users can share links to their profiles or any other content, accompanied by background music and video. It's designed to provide a personalized online presence with a unique aesthetic.
 
