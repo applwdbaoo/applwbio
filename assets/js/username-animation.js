@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const usernameVariants = [
     "c0mplex", 
     "Xuan Quang",
+    "Full Stack", 
     "To Yeu Cau ♥︎"
   ];
   
