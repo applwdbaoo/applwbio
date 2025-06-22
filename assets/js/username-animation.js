@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const usernameVariants = [
     "c0mplex", 
-    "Full Stack Developer", 
+    "Front-end Developer",
+    "Currently learning Back-end",
     "To Yeu Cau ♥︎"
   ];
   
