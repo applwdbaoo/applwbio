@@ -1,8 +1,5 @@
 const songs = [
-    "(Đặt) Anh Trai Mưa - Jet Full HD.mp3",
-    "EM ƠI LÊN PHỐ - TIPO REMIX.mp3",
-    "Linh cảm tim em-Tino Remix.mp3",
-    "Tuy Am - Ben Heineken.mp3"
+    "What Lovers Do - Maroon 5  Elemer Remix (Lyrics + Vietsub) ♫.mp3"
 ];
 
 let currentSongIndex = 0;
