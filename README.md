@@ -43,7 +43,7 @@ This project is licensed under the [MIT License](LICENSE). Feel free to customiz
 
 ## Previews
 
-[Demo Site](https://c0mplex.is-a.dev/)
+[Demo Site](https://c0mplex.site)
 
 ![image](https://i.postimg.cc/524RpJKb/1.png)
 
