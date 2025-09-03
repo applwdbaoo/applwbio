@@ -184,7 +184,7 @@ body {
 }
 
 .links a:hover {
-  color: rgb(214, 109, 255);
+  color: rgba(229,187,123,255);
   text-decoration: underline;
   transform: translateY(-5px) scale(1.1);
 }

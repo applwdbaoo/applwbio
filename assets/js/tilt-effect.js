@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const updateTilt = (e) => {
     const rect = blurredBox.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;  // -1 đến 1
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2; // -1 đến 1
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
     
     target = {
       x: Math.max(-config.maxAngle, Math.min(config.maxAngle, y * config.maxAngle)),
