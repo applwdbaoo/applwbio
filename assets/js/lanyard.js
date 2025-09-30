@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const apiUrl = `https://api.lanyard.rest/v1/users/${userId}`;
   
   const avatar = document.getElementById('discord-avatar');
-  const avatarFrame = document.getElementById('avatar-frame');
   const username = document.getElementById('discord-username');
   const statusDot = document.getElementById('discord-status-dot');
   const statusText = document.getElementById('discord-status-text');
