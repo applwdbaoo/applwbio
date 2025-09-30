@@ -18,7 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      
+
+      if (data.avatar_decoration && data.avatar_decoration.asset) {
+                const asset = data.avatar_decoration.asset;
+                const frameUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${asset}.png`;
+                avatarFrame.src = frameUrl;
+                avatarFrame.style.display = 'block';
+            } else {
+                console.warn("No avatar frame asset found.");
+                avatarFrame.style.display = 'none';
+            }
       if (data.success) {
         const discord = data.data;
         
