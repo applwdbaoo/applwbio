@@ -445,8 +445,8 @@ body {
 }
 
 .lang-container img {
-  width: 300px !important;
-  height: 300px !important;
+  width: 150px !important;
+  height: 150px !important;
   border-radius: 0 !important;
   object-fit: contain;
   transition: all 0.3s ease;
