@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-
+      
       if (data.success) {
         const discord = data.data;
         
