@@ -432,12 +432,12 @@ body {
 
 .lang-container {
   position: absolute;
-  bottom: 68px;
+  bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   width: 90%;
   z-index: 1001;
   margin-top: 20px;
