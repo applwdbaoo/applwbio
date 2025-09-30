@@ -432,12 +432,12 @@ body {
 
 .lang-container {
   position: absolute;
-  bottom: 45px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 18px;
   width: 90%;
   z-index: 1001;
   margin-top: 20px;
@@ -445,8 +445,8 @@ body {
 }
 
 .lang-container img {
-  width: 50px !important;
-  height: 50px !important;
+  width: 65px !important;
+  height: 65px !important;
   border-radius: 0 !important;
   object-fit: contain;
   transition: all 0.3s ease;
