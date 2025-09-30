@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const activityDetails = document.getElementById('discord-activity-details');
   const activityState = document.getElementById('discord-activity-state');
   const albumArt = document.getElementById('discord-album-art');
+  const avatarFrame = document.getElementById('avatar-frame');
   
   async function updateDiscordStatus() {
     try {
