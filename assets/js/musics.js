@@ -1,7 +1,7 @@
 const songs = [
-    "1.mp3",
-    "2.mp3",
-    "3.mp3"
+    "50 Feet.mp3",
+    "intentions.mp3",
+    "Joji - Afterthought.mp3"
 ];
 
 let currentSongIndex = 0;
