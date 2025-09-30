@@ -25,9 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${discord.discord_user.avatar}.png`;
         avatar.src = avatarUrl;
 
-        const asset = data.avatar_decoration.asset;
-                const frameUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${asset}.png`;
-                avatarFrame.src = frameUrl;
+        const frameUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${userId}/${asset}.png`;
+        avatarFrame.src = frameUrl;
         
         username.textContent = discord.discord_user.username;
         
