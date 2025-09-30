@@ -1,5 +1,5 @@
 const songs = [
-    "Afterthoughts.mp3",
+    "Joji - Afterthought.mp3",
     "50 Feet.mp3",
     "intentions.mp3"
 ];
