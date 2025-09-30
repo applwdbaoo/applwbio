@@ -1,7 +1,5 @@
 const songs = [
-    "2gsang - LÝ LỮ CA.mp3",
-    "2323 - NGHIÊM TỔNG.mp3",
-    "T9 - THIÊN NGỰ NGUYÊN.mp3"
+    "default.mp3"
 ];
 
 let currentSongIndex = 0;
